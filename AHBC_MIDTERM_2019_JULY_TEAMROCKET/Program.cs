@@ -6,7 +6,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("HelloWorld!");
         }
     }
 }
