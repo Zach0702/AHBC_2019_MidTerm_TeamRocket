@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
-    public class Cash : IPayment
+    public class Cash : IPaymentMethod
     {
         private void Pay()
         {

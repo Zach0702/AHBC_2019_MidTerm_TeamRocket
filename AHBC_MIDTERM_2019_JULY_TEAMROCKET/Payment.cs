@@ -2,72 +2,56 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Payments
+namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
-    public abstract class Payment : IPayment
+    public class Payment : IPaymentMethod
     {
-        //public double SubTotal { get; set; }
-        //public double SalesTaxTotal { get; set; }
-        //public double GrandTotal { get; set; }
-        //public object PaymentType { get; private set; }
-        public string Total { get; set; }
+        public double SubTotal { get; set; }
+        public double SalesTaxTotal { get; set; }
+        public double GrandTotal { get; set; }
+        public object PaymentType { get; private set; }
 
-        //public const double taxRate = 0.06;
+        double taxRate = 0.06;
 
-
-        public void Pay (string total)
+        public Payment(double calculatedSubTotal)
         {
-
+            SubTotal = calculatedSubTotal;
         }
 
-        //public Payment()
-        //{
-        //    //SubTotal = subTotal;
-        //    SalesTaxTotal = salesTaxTotal;
-        //    GrandTotal = grandTotal;
-        //    PaymentType = paymentType;
-        //}
+      
 
-        //private double SubTotal()
-        //{
-        //    // subtotal = item price * the qty of items
-        //    subTotal = itemPrice * itemQuantity;
-        //    // you would want this to return the subtotal
-
-        //    return subTotal;
-        //}
-
-        //private double SalesTaxTotal()
-        //{
-        //    //sales tax total = subtotal * the taxrate of 6%
-        //    salesTaxTotal = subTotal * taxRate;
-        //    return salesTaxTotal;
-        //}
-
-        //private double GrandTotal()
-        //{
-        //    // grand total = subtotal + tax total
-        //    grandTotal = subTotal + salesTaxTotal;
-        //    return grandTotal;
-        //}
-
-        public void MethodOfPayment(string total)
+        private double CalculateTotalWithTax()
         {
+            //sales tax total = subtotal * the taxrate of 6%
+            SalesTaxTotal = SubTotal * taxRate;
+            return SalesTaxTotal;
+        }
+
+        private double CalculateGrandTotal()
+        {
+            // grand total = subtotal + tax total
+            GrandTotal = SubTotal + SalesTaxTotal;
+            return GrandTotal;
+        }
+
+        public void MethodOfPayment()
+        {
+            Console.WriteLine("Please enter your desired method of payment");
             while (true)
             {
                 PaymentType = paymentType;
                 switch (paymentType)
                 {
                     case 1:
-                        PayWithCash();
+                        PayCash();
                         return;
 
                     case 2:
-                        PayWithCheck();
+                        PayCheck();
                         return;
 
                     case 3:
-                        PayWithCreditCard();
+                        PayCreditCard();
                         return;
 
                     default:
@@ -82,10 +66,5 @@ namespace Payments
         //{
         //** if we decide to do non-taxable items.. maybe rename this method??
         //}
-    }
-
-    public interface IPayment
-    {
-
     }
 }

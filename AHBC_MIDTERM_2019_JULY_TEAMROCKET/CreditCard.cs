@@ -21,7 +21,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         };
 
 
-        public new void Pay(string total)
+        public void Pay(string total)
         {
             Console.WriteLine($"Total: {total}\n"); //might not need based on how user interface is set up
             Console.WriteLine("Please choose a Card Type: \n1. VISA \n2. MASTER \n3. DISC \n4. AMEX");
