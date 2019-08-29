@@ -20,13 +20,14 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             
             while (cashGiven < total)
             {
-                Console.WriteLine($"Your total is: {total}, Please enter how much cash you will be giving: ");
-                cashGiven = CashReceived();
-
                 if (cashGiven < total)
                 {
                     Console.WriteLine("I apologize, however the funds provided are insufficient.");
                 }
+                Console.WriteLine($"Your total is: {total}, Please enter how much cash you will be giving: ");
+                cashGiven = CashReceived();
+
+                
             }
             if (cashGiven >= total)
             {

@@ -38,6 +38,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         {
             //sales tax total = subtotal * the taxrate of 6%
             SalesTaxTotal = SubTotal * taxRate;
+            SalesTaxTotal = Math.Round(SalesTaxTotal, 2, MidpointRounding.AwayFromZero);
             return SalesTaxTotal;
         }
 
@@ -45,6 +46,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         {
             // grand total = subtotal + tax total
             GrandTotal = SubTotal + SalesTaxTotal;
+            GrandTotal = Math.Round(GrandTotal, 2, MidpointRounding.AwayFromZero);
             return GrandTotal;
         }
 
