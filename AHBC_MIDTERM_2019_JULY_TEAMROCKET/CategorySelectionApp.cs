@@ -41,19 +41,15 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             Console.Clear();
             Console.WriteLine("Which item would you like to purchase? (Select from the folowing numbers)");
 
-            int i = 0;
+            int i = 1;
             foreach (var item in currentInventory.TotalStoreInventory)
             {
 
                 if (item.ItemCategory == categories[userMenuSelection - 1])
                 {
-
-                    Console.WriteLine("{0,-20} {1,-10:N1} {2,10}", $"{i} {item.NameOfItem}",$"QTY: {item.ItemQuantity}",$"Price: ${item.ItemPrice}");
+                    Console.WriteLine("{0,-20} {1,-10:N1} {2,10}", $"{i} {item.NameOfItem}",$"QTY: {item.ItemQuantity}",$"Price: ${NumberToDollarFormat.Execute(item.ItemPrice)}");
                     tempList.Add(item);
-
-
                     i++;
-
                 }
             }
             DislayListOfItems(userCart);
@@ -66,7 +62,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
             ValidItemChoice();
 
-            Console.Write($"How many {tempList[itemSelection].NameOfItem}s would you like to purchase (QTY: {tempList[itemSelection].ItemQuantity}):");
+            Console.Write($"How many {tempList[itemSelection-1].NameOfItem}s would you like to purchase (QTY: {tempList[itemSelection-1].ItemQuantity}):");
 
             testQTY = Console.ReadLine();
 
@@ -74,27 +70,22 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
 
             Console.Clear();
-            Console.WriteLine($"Great! {qtySelection} {tempList[itemSelection].NameOfItem}{(qtySelection==1 ? "" : "s")} have been added to you shopping cart!\r");
+            Console.WriteLine($"Great! {qtySelection} {tempList[itemSelection-1].NameOfItem}{(qtySelection==1 ? "" : "s")} have been added to you shopping cart!\r");
             Console.WriteLine();
 
             if (qtySelection > 0 )
             {
-                tempItem.NameOfItem = tempList[itemSelection].NameOfItem;
-                tempItem.ItemPrice = tempList[itemSelection].ItemPrice;
+                tempItem.NameOfItem = tempList[itemSelection-1].NameOfItem;
+                tempItem.ItemPrice = tempList[itemSelection-1].ItemPrice;
                 tempItem.ItemQuantity = qtySelection;
-                tempItem.ItemCategory = tempList[itemSelection].ItemCategory;
-
+                tempItem.ItemCategory = tempList[itemSelection-1].ItemCategory;
                 tempcart.addToCart(tempItem);
-
             }
 
             if (tempcart.Count()>0)
             {
                 tempcart.DisplayCart();
-
             }
-
-
         }
 
         public void ValidQuantityEntered()
@@ -104,11 +95,10 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 if (IntegerValidator.Validate(testQTY))
                 {
 
-                    if (int.Parse(testQTY) >= 0 && int.Parse(testQTY) <= tempList[itemSelection].ItemQuantity)
+                    if (int.Parse(testQTY) >= 0 && int.Parse(testQTY) <= tempList[itemSelection-1].ItemQuantity)
                     {
                         qtySelection = int.Parse(testQTY);
                         isValid = true;
-
                     }
                     else
                     {
@@ -117,17 +107,12 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                         isValid = false;
 
                     }
-
-
                 }
                 else
                 {
-
                     Console.WriteLine("That is not a valid choice, please try again.");
                     testQTY = Console.ReadLine();
                     isValid = false;
-
-
                 }
             } while (!isValid);
         }
@@ -139,11 +124,10 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 if (IntegerValidator.Validate(testSelection))
                 {
 
-                    if (int.Parse(testSelection) >= 0 && int.Parse(testSelection) < tempList.Count)
+                    if (int.Parse(testSelection) > 0 && int.Parse(testSelection) <= tempList.Count)
                     {
                         itemSelection = int.Parse(testSelection);
                         isValid = true;
-
                     }
                     else
                     {
@@ -152,16 +136,12 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                         isValid = false;
 
                     }
-
-
                 }
                 else
                 {
-
                     Console.WriteLine("That is not a valid choice, please try again.");
                     testSelection = Console.ReadLine();
                     isValid = false;
-
                 }
             } while (!isValid);
         }
