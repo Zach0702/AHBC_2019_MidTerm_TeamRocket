@@ -12,20 +12,13 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         private static int startMenuChoice;
         public static List<string> categories = new List<string> { };
 
-        public enum MyEnum
-        {
-
-
-
-        }
-
         public static void RunShoppingMenu(StoreInventory currentInventory, ShoppingCart userCart)
         {
 
             char loopBreaker;
             do
             {
-               
+                Console.Clear();
                 categories.Clear();
 
                 foreach (var item in currentInventory)
@@ -62,31 +55,24 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
                     if (startMenuChoice > 0 && startMenuChoice <= categories.Count )
                     {
-
                         CategorySelectionApp selections = new CategorySelectionApp(startMenuChoice, categories);
                         selections.categorySelector(currentInventory, userCart);
                         isNotMenuChoice = false;
-
-
                     }
                     else
                     {
-
                         Console.Clear();
                         Console.Write("Not a valid option. ");
                         menuOptions();
                         initialUserInput = Console.ReadLine();
                         isNotMenuChoice = true;
-
                     }
 
                 } while (isNotMenuChoice);
 
-
-
                 Console.WriteLine("Do you wish to continue adding items to your cart (enter y/n): "); //ask user to if they want to continue
                 loopBreaker = IsValidLoopBreaker(Console.ReadLine()); //storing answer and if it's valid input 
-
+               
 
             } while (loopBreaker == 'y');
 

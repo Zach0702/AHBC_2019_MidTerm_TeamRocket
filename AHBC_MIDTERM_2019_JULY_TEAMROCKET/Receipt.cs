@@ -24,22 +24,21 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         public void PrintReceipt()
         {
             int i = 1;
-            Console.WriteLine("Thank you for shopping with us");
+            Console.WriteLine("\nThank you for shopping with us");
             Console.WriteLine("Printing Recepit for you.....");
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine("\n");
+            
             foreach (var item in UserShoppingCart)
             {
                 //Console.WriteLine($"{item.NameOfItem}");
                 //Console.WriteLine($"{item.ItemCategory}");
                 //Console.WriteLine($"{item.ItemQuantity}");
-                Console.WriteLine("{0,-20} {1,-15:N1} {2,10}",$"{i} {item.NameOfItem}",$"{item.ItemCategory}",$"Quantity: {item.ItemQuantity}");
+                Console.WriteLine("{0,-20} {1,-10:N1} {2,-15:N1} {3,15}", $"{i} {item.NameOfItem}",$"{item.ItemCategory}",$"Quantity: {item.ItemQuantity}", $"Price per Item: ${NumberToDollarFormat.Execute(item.ItemPrice)}");
                 i++;
             }
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine($"Subtotal: ${/*userPayments.SubTotal*/ ReceiptSubTotal}");
-            Console.WriteLine($"GrandTotal: ${/*userPayments.GrandTotal*/ReceiptGrandTotal}");
+            Console.WriteLine("\n");
+            Console.WriteLine($"Subtotal: ${/*userPayments.SubTotal*/NumberToDollarFormat.Execute(ReceiptSubTotal)}");
+            Console.WriteLine($"GrandTotal: ${/*userPayments.GrandTotal*/NumberToDollarFormat.Execute(ReceiptGrandTotal)}");
         }
     }
 }
