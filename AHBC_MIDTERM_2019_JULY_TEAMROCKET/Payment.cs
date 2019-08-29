@@ -53,16 +53,16 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
             Console.Clear();
 
-            Console.WriteLine("Thank you for your order fetching your total...");
+            Console.WriteLine("Thank you for your order! One second while we fetch your total...");
             Console.WriteLine($"Subtotal: ${SubTotal}");
             Console.WriteLine($"Tax: ${SalesTaxTotal}");
             Console.WriteLine($"Grand Total: ${GrandTotal}");
             Console.WriteLine();
 
-            Console.WriteLine("Please selece a method of payment (enter in number): " +
-                "\n [1.] Credit Card" +
-                "\n [2.] Cash" +
-                "\n [3.] Check");
+            Console.WriteLine("Please select a method of payment (enter a number): " +
+                "\n [1] Credit Card" +
+                "\n [2] Cash" +
+                "\n [3] Check");
             //validating input with an enum try parse
             bool isInvalidInput = true;
             //While the input is invalid this loop will continue to run

@@ -96,7 +96,9 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
         private static void menuOptions()
         {
-            Console.WriteLine("Please selecet for the following categories:\n");
+            Console.Clear();
+
+            Console.WriteLine("\nPlease select for the following categories:\n");
             int i = 1;
             foreach (var item in categories)
             {

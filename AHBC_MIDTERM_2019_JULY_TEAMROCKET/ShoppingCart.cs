@@ -81,7 +81,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         public void DisplayCart()
         {
             int i = 1;
-            Console.WriteLine("So far in you cart you have the following:\r");
+            Console.WriteLine("So far in your cart you have the following:\r");
             foreach (var item in ItemstoPurchase)
             {
                 Console.WriteLine($"{i}. {item.NameOfItem} - {item.ItemQuantity} x {item.ItemPrice} = {item.ItemPrice*item.ItemQuantity}");
