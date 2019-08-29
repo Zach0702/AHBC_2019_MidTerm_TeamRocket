@@ -11,14 +11,6 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         private static bool isValid, isNotMenuChoice;
         private static int startMenuChoice;
         public static List<string> categories = new List<string> { };
-
-        public enum MyEnum
-        {
-
-
-
-        }
-
         public static void RunShoppingMenu(StoreInventory currentInventory, ShoppingCart userCart)
         {
 
@@ -38,6 +30,11 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 }
                 menuOptions();
                 initialUserInput = Console.ReadLine();
+                if (initialUserInput == "x")
+                {
+                    StoreApp returnToMenu = new StoreApp();
+                    returnToMenu.RunStore();
+                }
                 Console.WriteLine();
 
                 do
@@ -60,7 +57,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                     } while (!isValid);
 
 
-                    if (startMenuChoice > 0 && startMenuChoice <= categories.Count )
+                    if (startMenuChoice > 0 && startMenuChoice <= categories.Count)
                     {
 
                         CategorySelectionApp selections = new CategorySelectionApp(startMenuChoice, categories);
@@ -69,6 +66,11 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
 
                     }
+                    //else if (startMenuChoice == 5)
+                    //{
+                    //    StoreApp returnToMainMenu = new StoreApp();
+                    //    returnToMainMenu.RunStore();
+                    //}
                     else
                     {
 
@@ -102,7 +104,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 Console.WriteLine($"[{i}] {item}\r");
                 i++;
             }
-            Console.WriteLine("[5] Return to main menu");
+            Console.WriteLine("Enter x to return to main menu");
             //Console.WriteLine("[1] Clothiging\n[2] Accessories\n[3] Shoes\n[4] Outerwear\n");
 
         }

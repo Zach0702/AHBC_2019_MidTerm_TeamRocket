@@ -38,8 +38,8 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             }
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine($"Subtotal: ${/*userPayments.SubTotal*/ ReceiptSubTotal}");
-            Console.WriteLine($"GrandTotal: ${/*userPayments.GrandTotal*/ReceiptGrandTotal}");
+            Console.WriteLine($"Subtotal: ${ReceiptSubTotal}");
+            Console.WriteLine($"GrandTotal: ${ReceiptGrandTotal}");
         }
     }
 }

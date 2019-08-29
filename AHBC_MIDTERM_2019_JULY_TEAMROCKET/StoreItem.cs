@@ -35,7 +35,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             return linesOfTextFile;  //returning the completed list whole text file has been read and stored
         }
 
-      
+
 
         public StoreItem ReturnStoreItem(string itemLine)  //passing in a line from the list to create an item with
         {
