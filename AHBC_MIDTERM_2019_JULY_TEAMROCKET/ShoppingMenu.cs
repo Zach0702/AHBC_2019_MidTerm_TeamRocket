@@ -54,7 +54,6 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                             Console.Clear();
                             menuOptions();
                             initialUserInput = Console.ReadLine();
-
                             isValid = false;
                         }
 
@@ -96,14 +95,14 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
         private static void menuOptions()
         {
-            Console.WriteLine("Please selecet for the following categories:\n");
+            Console.WriteLine("Please select from the following categories:\n");
             int i = 1;
             foreach (var item in categories)
             {
                 Console.WriteLine($"[{i}] {item}\r");
                 i++;
             }
-
+            Console.WriteLine("[5] Return to main menu");
             //Console.WriteLine("[1] Clothiging\n[2] Accessories\n[3] Shoes\n[4] Outerwear\n");
 
         }

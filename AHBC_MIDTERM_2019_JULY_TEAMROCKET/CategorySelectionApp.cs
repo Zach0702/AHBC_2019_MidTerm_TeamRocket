@@ -48,7 +48,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 if (item.ItemCategory == categories[userMenuSelection - 1])
                 {
 
-                    Console.WriteLine($"{i} {item.NameOfItem}\tQTY: {item.ItemQuantity}\tPrice: ${item.ItemPrice}");
+                    Console.WriteLine("{0,-20} {1,-10:N1} {2,10}", $"{i} {item.NameOfItem}",$"QTY: {item.ItemQuantity}",$"Price: ${item.ItemPrice}");
                     tempList.Add(item);
 
 
@@ -139,7 +139,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 if (IntegerValidator.Validate(testSelection))
                 {
 
-                    if (int.Parse(testSelection) >= 0 && int.Parse(testSelection) <= tempList.Count)
+                    if (int.Parse(testSelection) >= 0 && int.Parse(testSelection) < tempList.Count)
                     {
                         itemSelection = int.Parse(testSelection);
                         isValid = true;

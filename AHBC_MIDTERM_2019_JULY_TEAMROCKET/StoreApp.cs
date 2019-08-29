@@ -135,14 +135,14 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             } while (isNotMenuChoice);
 
 
-            StoreInventory.ResetInventoryDatabase(inventoryPull); 
+           StoreInventory.ResetInventoryDatabase(inventoryPull); 
             //    ^^^^^^^^^^^^^^^^^^
             //I added this in case we need to reset the inventory when we close the program. 
             //Idk if we want this, but it's here just in case.
 
         }
 
-        private void menuOptions()
+        public static void menuOptions()
         {
 
             Console.WriteLine("Please, selecet below from the following options:\n");

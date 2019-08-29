@@ -26,16 +26,20 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             int i = 1;
             Console.WriteLine("Thank you for shopping with us");
             Console.WriteLine("Printing Recepit for you.....");
+            Console.WriteLine();
+            Console.WriteLine();
             foreach (var item in UserShoppingCart)
             {
                 //Console.WriteLine($"{item.NameOfItem}");
                 //Console.WriteLine($"{item.ItemCategory}");
                 //Console.WriteLine($"{item.ItemQuantity}");
-                Console.WriteLine($"{i} {item.NameOfItem}\tQTY: {item.ItemCategory}\tQuantity: {item.ItemQuantity}");
+                Console.WriteLine("{0,-20} {1,-15:N1} {2,10}",$"{i} {item.NameOfItem}",$"{item.ItemCategory}",$"Quantity: {item.ItemQuantity}");
                 i++;
             }
-            Console.WriteLine($"Subtotal: {/*userPayments.SubTotal*/ ReceiptSubTotal}");
-            Console.WriteLine($"GrandTotal: {/*userPayments.GrandTotal*/ReceiptGrandTotal}");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine($"Subtotal: ${/*userPayments.SubTotal*/ ReceiptSubTotal}");
+            Console.WriteLine($"GrandTotal: ${/*userPayments.GrandTotal*/ReceiptGrandTotal}");
         }
     }
 }

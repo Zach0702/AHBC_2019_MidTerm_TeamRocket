@@ -38,6 +38,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         {
             //sales tax total = subtotal * the taxrate of 6%
             SalesTaxTotal = SubTotal * taxRate;
+            SalesTaxTotal = Math.Round(SalesTaxTotal, 2, MidpointRounding.AwayFromZero);
             return SalesTaxTotal;
         }
 
@@ -45,6 +46,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         {
             // grand total = subtotal + tax total
             GrandTotal = SubTotal + SalesTaxTotal;
+            GrandTotal = Math.Round(GrandTotal, 2, MidpointRounding.AwayFromZero);
             return GrandTotal;
         }
 
@@ -60,9 +62,9 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             Console.WriteLine();
 
             Console.WriteLine("Please selece a method of payment (enter in number): " +
-                "\n [1.] Credit Card" +
-                "\n [2.] Cash" +
-                "\n [3.] Check");
+                "\n [1] Credit Card" +
+                "\n [2] Cash" +
+                "\n [3] Check");
             //validating input with an enum try parse
             bool isInvalidInput = true;
             //While the input is invalid this loop will continue to run
