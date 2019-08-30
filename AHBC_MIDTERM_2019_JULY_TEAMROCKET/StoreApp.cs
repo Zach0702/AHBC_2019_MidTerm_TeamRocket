@@ -24,12 +24,12 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         public void RunStore()
         {
 
-           
+
 
             do
             {
                 Console.Clear();
-                Console.WriteLine("Welcome to B#, your number one stop for the latest in digital fashion! \nSelect below from the following options:\n");
+                Console.WriteLine("\nWelcome to B#, your number one stop for the latest in digital fashion! \nSelect below from the following options:\n");
                 Console.WriteLine("[1] Shop \n[2] About \n[3] Exit");
 
                 initalUserInput = Console.ReadLine();
@@ -79,7 +79,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                             nextChoiceAfterTransaction = Console.ReadLine();
                             do
                             {
-                               
+
                                 if (IntegerValidator.Validate(nextChoiceAfterTransaction))
                                 {
                                     shoppingMenuChoice = int.Parse(nextChoiceAfterTransaction);
@@ -99,7 +99,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                             {
                                 isShoppingAgain = true;
                             }
-                            else 
+                            else
                             {
                                 isShoppingAgain = false;
                             }
@@ -117,9 +117,11 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                             "Whether you’re shopping for an amazing pair of shoes or the perfect outfit for an event, remember to always BE SHARP!\n");
 
                         Console.WriteLine("Acceptable forms of payment include cash, credit card, or check only.\n");
+                        Console.Write("Press 'Enter' to return to main menu...");
+                        Console.ReadLine();
 
-                        menuOptions();
-                        initalUserInput = Console.ReadLine();
+                        Console.Clear();
+
                         isNotMenuChoice = true;
                         break;
                     case 3:
@@ -131,8 +133,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                     default:
                         Console.Clear();
                         Console.Write("Not a valid option. ");
-                        menuOptions();
-                        initalUserInput = Console.ReadLine();
+
                         isNotMenuChoice = true;
                         break;
                 }
@@ -140,7 +141,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             } while (isNotMenuChoice);
 
 
-           StoreInventory.ResetInventoryDatabase(inventoryPull); 
+            StoreInventory.ResetInventoryDatabase(inventoryPull);
             //    ^^^^^^^^^^^^^^^^^^
             //I added this in case we need to reset the inventory when we close the program. 
             //Idk if we want this, but it's here just in case.
