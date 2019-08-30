@@ -55,17 +55,22 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
             Console.Clear();
 
+
             Console.WriteLine("Thank you for your order! One second while we fetch your total...");
-            Console.WriteLine($"Subtotal: ${SubTotal}");
-            Console.WriteLine($"Tax: ${SalesTaxTotal}");
-            Console.WriteLine($"Grand Total: ${GrandTotal}");
+
+            Console.WriteLine($"Subtotal: ${NumberToDollarFormat.Execute(SubTotal)}");
+            Console.WriteLine($"Tax: ${NumberToDollarFormat.Execute(SalesTaxTotal)}");
+            Console.WriteLine($"Grand Total: ${NumberToDollarFormat.Execute(GrandTotal)}");
             Console.WriteLine();
 
             Console.WriteLine("Please select a method of payment (enter a number): " +
                 "\n [1] Credit Card" +
                 "\n [2] Cash" +
                 "\n [3] Check");
+          
+            
             //validating input with an enum try parse
+            
             bool isInvalidInput = true;
             //While the input is invalid this loop will continue to run
             while (isInvalidInput)
@@ -75,6 +80,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                     switch (userPaymentSelection)
                     {
                         case PaymentSelection.CreditCard:
+                            Console.Clear();
                             CreditCard userCreditCard = new CreditCard();
                             userCreditCard.Pay(GrandTotal);
                             Receipt userReceipt = new Receipt(GrandTotal, SubTotal, userShoppingCart.ItemstoPurchase);
@@ -85,6 +91,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                             return;
 
                         case PaymentSelection.Cash:
+                            Console.Clear();
                             Cash userCash = new Cash();
                             userCash.Pay(GrandTotal);
                             Receipt cashUserReceipt = new Receipt(GrandTotal, SubTotal, userShoppingCart.ItemstoPurchase);
@@ -93,6 +100,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                             return;
 
                         case PaymentSelection.Check:
+                            Console.Clear();
                             Check userCheck = new Check();
                             userCheck.Pay(GrandTotal);
                             Receipt checkUserReceipt = new Receipt(GrandTotal, SubTotal, userShoppingCart.ItemstoPurchase);
