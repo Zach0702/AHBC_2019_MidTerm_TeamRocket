@@ -89,7 +89,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
             }
 
-            File.WriteAllText("Items.txt", newInventoryFileString);
+            File.WriteAllText(FileLocation.location, newInventoryFileString);
         }
 
 
@@ -106,7 +106,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
             }
 
-            File.WriteAllText("Items.txt", newInventoryFileString);
+            File.WriteAllText(FileLocation.location, newInventoryFileString);
         }
 
 

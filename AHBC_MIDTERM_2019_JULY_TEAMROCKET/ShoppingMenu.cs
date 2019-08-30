@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
-    class ShoppingMenu
+    public class ShoppingMenu
     {
         private static string initialUserInput = "";
         private static bool isValid, isNotMenuChoice;
@@ -31,6 +31,11 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 }
                 menuOptions();
                 initialUserInput = Console.ReadLine();
+                if (initialUserInput == "x")
+                {
+                    StoreApp returnToMenu = new StoreApp();
+                    returnToMenu.RunStore();
+                }
                 Console.WriteLine();
 
                 do
@@ -70,7 +75,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
                 } while (isNotMenuChoice);
 
-                Console.WriteLine("Do you wish to continue adding items to your cart (enter y/n): "); //ask user to if they want to continue
+                Console.WriteLine("Do you wish to continue adding items to your cart, or checkout? (enter y to keep adding/enter n to checkout): "); //ask user to if they want to continue
                 loopBreaker = IsValidLoopBreaker(Console.ReadLine()); //storing answer and if it's valid input 
                
 
@@ -88,7 +93,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 Console.WriteLine($"[{i}] {item}\r");
                 i++;
             }
-            Console.WriteLine("[5] Return to main menu");
+            Console.WriteLine("[5] Enter x to return to main menu");
             //Console.WriteLine("[1] Clothiging\n[2] Accessories\n[3] Shoes\n[4] Outerwear\n");
 
         }

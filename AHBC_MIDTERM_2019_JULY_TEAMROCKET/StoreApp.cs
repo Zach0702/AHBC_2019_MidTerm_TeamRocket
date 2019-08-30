@@ -79,6 +79,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                             nextChoiceAfterTransaction = Console.ReadLine();
                             do
                             {
+                               
                                 if (IntegerValidator.Validate(nextChoiceAfterTransaction))
                                 {
                                     shoppingMenuChoice = int.Parse(nextChoiceAfterTransaction);
@@ -98,10 +99,11 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                             {
                                 isShoppingAgain = true;
                             }
-                            else
+                            else 
                             {
                                 isShoppingAgain = false;
                             }
+
 
 
                         } while (isShoppingAgain);
