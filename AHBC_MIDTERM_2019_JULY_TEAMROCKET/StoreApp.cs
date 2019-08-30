@@ -29,7 +29,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             do
             {
                 Console.Clear();
-                Console.WriteLine("Welcome to '@void', your number one stop for the latest in digiatl fashion! \nSelecet below from the following options:\n");
+                Console.WriteLine("Welcome to B#, your number one stop for the latest in digital fashion! \nSelect below from the following options:\n");
                 Console.WriteLine("[1] Shop \n[2] About \n[3] Exit");
 
                 initalUserInput = Console.ReadLine();
@@ -73,7 +73,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                             inventoryPull.GenerateStoreInventory(usersCart);
                             StoreInventory.UpdateInventoryDatabase(inventoryPull);
                             usersCart = new ShoppingCart();
-                            Console.WriteLine("\nWould Like make another transacton or head to the main menu?\n");
+                            Console.WriteLine("\nWould Like make another transaction or head to the main menu?\n");
                             Console.WriteLine("[1] New Transaction \n[2] Main Menu\n");
 
                             nextChoiceAfterTransaction = Console.ReadLine();
@@ -109,9 +109,12 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                         break;
 
                     case 2:
-                        /// WRITE OUR STORE BIO!!!!
                         Console.Clear();
-                        Console.WriteLine("\n");
+                        Console.WriteLine("\nB# is a contemporary clothing store serving all of the latest fashion " +
+                            "for women, men, and children. We carry a vast selection of clothing, shoes, accessories, and jewelry. " +
+                            "Whether you’re shopping for an amazing pair of shoes or the perfect outfit for an event, remember to always BE SHARP!\n");
+
+                        Console.WriteLine("Acceptable forms of payment include cash, credit card, or check only.\n");
 
                         menuOptions();
                         initalUserInput = Console.ReadLine();
@@ -145,7 +148,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         public static void menuOptions()
         {
 
-            Console.WriteLine("Please, selecet below from the following options:\n");
+            Console.WriteLine("Please, select below from the following options:\n");
             Console.WriteLine("[1] Shop \n[2] About \n[3] Exit");
 
         }

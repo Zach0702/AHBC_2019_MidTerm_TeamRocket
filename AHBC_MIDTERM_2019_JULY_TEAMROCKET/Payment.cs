@@ -55,13 +55,15 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
             Console.Clear();
 
-            Console.WriteLine("Thank you for your order. Fetching your total...");
+
+            Console.WriteLine("Thank you for your order! One second while we fetch your total...");
+
             Console.WriteLine($"Subtotal: ${NumberToDollarFormat.Execute(SubTotal)}");
             Console.WriteLine($"Tax: ${NumberToDollarFormat.Execute(SalesTaxTotal)}");
             Console.WriteLine($"Grand Total: ${NumberToDollarFormat.Execute(GrandTotal)}");
             Console.WriteLine();
 
-            Console.WriteLine("Please selece a method of payment [Select 1-3]: " +
+            Console.WriteLine("Please select a method of payment (enter a number): " +
                 "\n [1] Credit Card" +
                 "\n [2] Cash" +
                 "\n [3] Check");

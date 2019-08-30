@@ -24,10 +24,11 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         public void PrintReceipt()
         {
             int i = 1;
+
             Console.WriteLine("\nThank you for shopping with us");
             Console.WriteLine("Printing Recepit for you.....");
             Console.WriteLine("\n");
-            
+        
             foreach (var item in UserShoppingCart)
             {
                 //Console.WriteLine($"{item.NameOfItem}");

@@ -41,11 +41,11 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                     if (cardEnum == CardTypes.VISA | cardEnum == CardTypes.MASTER | cardEnum == CardTypes.DISC)
                     {
                         Console.Write("\nPlease enter the credit card number(no dashes or spaces): ");
-                         CardNumber = ValidateCardNumber1(Console.ReadLine());
+                        CardNumber = ValidateCardNumber1(Console.ReadLine());
 
 
-                        Console.Write("\nExpiration Date (MM/YY) or (MM/YYYY):");
-                         ExpirationDate = ValidateExpDate(Console.ReadLine());
+                        Console.Write("\nExpiration Date (MM/YY) or (MM/YYYY): ");
+                        ExpirationDate = ValidateExpDate(Console.ReadLine());
 
 
                         Console.Write("\nCVV: ");
@@ -98,8 +98,8 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             {
                 do
                 {
-                    Console.WriteLine("This is not a valid CVV. Please re-enter.");
-                    Console.WriteLine("\nCVV:");
+                    Console.WriteLine("This is not a valid CVV code. Please re-enter.");
+                    Console.WriteLine("\nCVV Code: ");
                     cvvNum = (Console.ReadLine());
 
                 }
@@ -122,8 +122,8 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             {
                 do
                 {
-                    Console.WriteLine("This is not a valid CVV number. Please re-enter.");
-                    Console.WriteLine("\nCVV:");
+                    Console.WriteLine("This is not a valid CVV code. Please re-enter.");
+                    Console.WriteLine("\nCVV Code: ");
                     cvvNum = (Console.ReadLine());
 
                 }
@@ -150,7 +150,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 do
                 {
                     Console.WriteLine("This is not a valid expiration date. Please re-enter.");
-                    Console.WriteLine("\nExpiration Date:");
+                    Console.Write("\nExpiration Date: ");
                     expDate = (Console.ReadLine());
 
                 }
@@ -176,7 +176,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 do
                 {
                     Console.WriteLine("This is not a valid card number. Please re-enter.");
-                    Console.WriteLine("\nCard Number:");
+                    Console.Write("\nCard Number: ");
                     cardNum = (Console.ReadLine());
 
                 }
@@ -201,7 +201,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 do
                 {
                     Console.WriteLine("This is not a valid card number. Please re-enter.");
-                    Console.WriteLine("\nCard Number:");
+                    Console.Write("\nCard Number: ");
                     cardNum = (Console.ReadLine());
 
                 }
@@ -210,7 +210,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 return cardNum;
 
             }
-            
+
 
         }
         public void printCardInfo()
@@ -239,4 +239,4 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
 
 
-  
+
