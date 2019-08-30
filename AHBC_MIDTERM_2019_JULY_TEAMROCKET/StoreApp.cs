@@ -118,7 +118,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
                         Console.WriteLine("Acceptable forms of payment include cash, credit card, or check only.\n");
 
-                        menuOptions();
+                        Console.WriteLine("Press enter to return to the main menu");
                         initalUserInput = Console.ReadLine();
                         isNotMenuChoice = true;
                         break;
