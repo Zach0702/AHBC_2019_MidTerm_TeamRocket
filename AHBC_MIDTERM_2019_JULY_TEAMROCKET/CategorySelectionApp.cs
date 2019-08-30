@@ -52,7 +52,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                     i++;
                 }
             }
-            Console.WriteLine("Enter x to return to the main menu");
+            
             DislayListOfItems(userCart);
 
         }
@@ -60,12 +60,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         {
             testSelection = Console.ReadLine();
 
-            if(testSelection == "x")
-            {
-                StoreApp returningToMenu = new StoreApp();
-                returningToMenu.RunStore();
-
-            }
+            
 
             ValidItemChoice();
 

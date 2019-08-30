@@ -31,11 +31,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 }
                 menuOptions();
                 initialUserInput = Console.ReadLine();
-                if (initialUserInput == "x")
-                {
-                    StoreApp returnToMenu = new StoreApp();
-                    returnToMenu.RunStore();
-                }
+                
                 Console.WriteLine();
 
                 do
@@ -93,7 +89,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 Console.WriteLine($"[{i}] {item}\r");
                 i++;
             }
-            Console.WriteLine("[5] Enter x to return to main menu");
+          
             //Console.WriteLine("[1] Clothiging\n[2] Accessories\n[3] Shoes\n[4] Outerwear\n");
 
         }

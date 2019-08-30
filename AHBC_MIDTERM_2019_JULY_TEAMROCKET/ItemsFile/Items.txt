@@ -1,4 +1,4 @@
-DressShirt,13,29.5,Clothes
+DressShirt,25,29.5,Clothes
 T-Shirt,25,15.99,Clothes
 Pants,25,39.5,Clothes
 Skirt,25,17.98,Clothes
