@@ -52,6 +52,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                     i++;
                 }
             }
+            
             DislayListOfItems(userCart);
 
         }
@@ -59,6 +60,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         {
             testSelection = Console.ReadLine();
 
+            
 
             ValidItemChoice();
 

@@ -20,17 +20,19 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         //function to read text file
         public List<string> FileReader() //returns entire file in a list
         {
+            
+       //var location = $"{AppDomain.CurrentDomain.BaseDirectory}../../../ItemsFile/Items.txt";
             List<string> linesOfTextFile = new List<string>();  //creating new list to store the text file
-            using (var reader = new StreamReader("Items.txt"))  //opening file
+            using (var reader = new StreamReader(FileLocation.location))  //opening file
             {
                 var entireFile = reader.ReadToEnd();  //variable to store the entire file so we can edit
                 var lineArray = entireFile.Split("\r\n");  //storing file into a string array
 
                 foreach (var line in lineArray)  //looping through the line array
-               {
+                {
                     linesOfTextFile.Add(line);  //adding each line of the text file to the lines list
 
-               }
+                }
             }
             return linesOfTextFile;  //returning the completed list whole text file has been read and stored
         }

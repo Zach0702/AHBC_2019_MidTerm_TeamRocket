@@ -67,7 +67,8 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 "\n [1] Credit Card" +
                 "\n [2] Cash" +
                 "\n [3] Check");
-          
+            string readingInput = Console.ReadLine();
+            
             
             //validating input with an enum try parse
             
@@ -75,7 +76,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             //While the input is invalid this loop will continue to run
             while (isInvalidInput)
             {
-                if (Enum.TryParse<PaymentSelection>(Console.ReadLine(), out PaymentSelection userPaymentSelection))
+                if (Enum.TryParse<PaymentSelection>(readingInput, out PaymentSelection userPaymentSelection))
                 {
                     switch (userPaymentSelection)
                     {
@@ -114,6 +115,22 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                     }
 
                 }
+                else
+                {
+                    Console.WriteLine("ERROR invalid input please enter again: ");
+                    Console.WriteLine("Please selece a method of payment [Select 1-3]: " +
+                "\n [1] Credit Card" +
+                "\n [2] Cash" +
+                "\n [3] Check" +
+                "\n Enter x to return to the main menu");
+                    readingInput = Console.ReadLine();
+                    if (readingInput == "x")
+                    {
+                        StoreApp takeBackToMenu = new StoreApp();
+                        takeBackToMenu.RunStore();
+                    }
+                }
+               
 
 
 

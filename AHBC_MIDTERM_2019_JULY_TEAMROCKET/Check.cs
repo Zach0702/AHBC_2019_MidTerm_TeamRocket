@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
 
-    public class Check : IPaymentMethod
+    public class Check 
     {
         public string AccountNumber { get; set; }
         public string RoutingNumber { get; set; }
